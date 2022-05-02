@@ -1,0 +1,14 @@
+D:\VU\software testing\PROJ\datingapp\datingapp\bin\Debug\netcoreapp3.1\datingapp.exe
+D:\VU\software testing\PROJ\datingapp\datingapp\bin\Debug\netcoreapp3.1\datingapp.deps.json
+D:\VU\software testing\PROJ\datingapp\datingapp\bin\Debug\netcoreapp3.1\datingapp.runtimeconfig.json
+D:\VU\software testing\PROJ\datingapp\datingapp\bin\Debug\netcoreapp3.1\datingapp.runtimeconfig.dev.json
+D:\VU\software testing\PROJ\datingapp\datingapp\bin\Debug\netcoreapp3.1\datingapp.dll
+D:\VU\software testing\PROJ\datingapp\datingapp\bin\Debug\netcoreapp3.1\datingapp.pdb
+D:\VU\software testing\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.csproj.AssemblyReference.cache
+D:\VU\software testing\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.GeneratedMSBuildEditorConfig.editorconfig
+D:\VU\software testing\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.AssemblyInfoInputs.cache
+D:\VU\software testing\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.AssemblyInfo.cs
+D:\VU\software testing\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.csproj.CoreCompileInputs.cache
+D:\VU\software testing\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.dll
+D:\VU\software testing\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.pdb
+D:\VU\software testing\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.genruntimeconfig.cache

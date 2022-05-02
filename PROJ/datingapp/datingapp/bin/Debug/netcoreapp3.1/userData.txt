@@ -1,0 +1,10 @@
+Julian/21/F/y/n/y/n
+Kate/25/F/y/y/y/n
+Molly/29/F/n/n/y/n
+Josh/22/M/y/n/y/n
+David/26/M/Y/Y/Y/N
+Abby/27/O/y/n/y/n
+Holly/26/F/N/N/Y/Y
+Oliver/20/M/N/Y/Y/N
+Lucas/28/M/Y/N/Y/N
+William/22/M/Y/Y/Y/N
