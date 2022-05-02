@@ -1,0 +1,6 @@
+name-age-gender-nature-science-anime-coding
+
+name - string of chars [15], first name only, abc alphabet
+age - positive inter, >20, <29, no decimals
+gender - F, M, O, f, m, o
+interests - y, n, Y, N
