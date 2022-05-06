@@ -20,7 +20,7 @@ namespace datingapp
             //for new user
             string newName;
             string newAge;
-            char newGender, newCooking, newNatural, newScience, newReading;
+            string newGender, newCooking, newNatural, newScience, newReading;
 
             int counter = 0;
 
@@ -43,60 +43,72 @@ namespace datingapp
             //To Dauma: I haven't done any data validation yet
             Console.WriteLine("Welcome to Dating App!\n");
             Console.WriteLine("Please enter your first name\n");
-            while (ValidateString(Console.ReadLine()) != 'y')
+            while (ValidateString(newName = Console.ReadLine()) != 'y')
             {
                 Console.WriteLine("Name contains illegal characters\n");
                 Console.WriteLine("Please enter your first name\n");
             }
-            newName = Console.ReadLine();
+            //newName = Console.ReadLine();
             Console.WriteLine("Please enter your age\n");
-            while (ValidateInteger(Console.ReadLine()) != 'y')
+            while (ValidateInteger(newAge = Console.ReadLine()) != 'y')
             {
                 Console.WriteLine("Age contains illegal characters\n");
                 Console.WriteLine("Please enter yourage\n");
             }
-            newAge = Console.ReadLine();
+           
             Console.WriteLine("Please specifer your gender. Enter F for female, M for male or O for others\n");
-            while (ValidateGender(Console.ReadKey().KeyChar) != 'y')
+            while (ValidateGender(newGender = Console.ReadLine()) != 'y')
             {
                 Console.WriteLine("Gender contains illegal characters\n");
                 Console.WriteLine("Please specifer your gender. Enter F for female, M for male or O for others\n");
             }
-            newGender = Console.ReadKey().KeyChar;
             Console.WriteLine('\n');
             Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
             Console.WriteLine("Do you like cooking?\n");
-            while (ValidateAnswer(Console.ReadLine()) != 'y')
+            while (ValidateAnswer(newCooking = Console.ReadLine()) != 'y')
             {
                 Console.WriteLine("Answer contains illegal characters\n");
                 Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
             }
-            newCooking = Console.ReadKey().KeyChar;
+            
             Console.WriteLine('\n');
             Console.WriteLine("Do you like science?\n");
-            while (ValidateAnswer(Console.ReadLine()) != 'y')
+            while (ValidateAnswer(newScience = Console.ReadLine()) != 'y')
             {
                 Console.WriteLine("Answer contains illegal characters\n");
                 Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
             }
-            newScience = Console.ReadKey().KeyChar;
             Console.WriteLine('\n');
             Console.WriteLine("Do you enjoy nature?\n");
-            while (ValidateAnswer(Console.ReadLine()) != 'y')
+            while (ValidateAnswer(newNatural = Console.ReadLine()) != 'y')
             {
                 Console.WriteLine("Answer contains illegal characters\n");
                 Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
             }
-            newNatural = Console.ReadKey().KeyChar;
             Console.WriteLine('\n');
             Console.WriteLine("Do you like reading?\n");
-            while (ValidateAnswer(Console.ReadLine()) != 'y')
+            while (ValidateAnswer(newReading = Console.ReadLine()) != 'y')
             {
                 Console.WriteLine("Answer contains illegal characters\n");
                 Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
             }
-            newReading = Console.ReadKey().KeyChar;
             Console.WriteLine('\n');
+            string[] person = new string[7];
+            person[0] = newName;
+            person[1] = newAge;
+            person[2] = newGender.ToString();
+            person[3] = newCooking.ToString();
+            person[4] = newScience.ToString();
+            person[5] = newNatural.ToString();
+            person[6] = newReading.ToString();
+
+            FindSameInterests(person, names, age, gender, cooking, natural, science, reading);
+
+
+
+
+
+
 
             //showing matching results
 
@@ -149,9 +161,9 @@ namespace datingapp
             }
         }
 
-        public static char ValidateGender(char string1)
+        public static char ValidateGender(string string1)
         {
-            if (string1.Equals('f') || string1.Equals('F') || string1.Equals('m') || string1.Equals('M') || string1.Equals('o') || string1.Equals('O'))
+            if (string1.Equals("f") || string1.Equals("F") || string1.Equals("m") || string1.Equals("M") || string1.Equals("o") || string1.Equals("O"))
             {
                 return 'y';
             }
@@ -163,12 +175,42 @@ namespace datingapp
 
         public static char ValidateAnswer(string string1)
         {
-            if (string1.Equals("n") || string1.Equals("N") || string1.Equals("y") || string1.Equals("Y"))
+            if (string1.Equals("n") || string1.Equals("N") || string1.Equals("y") || string1.Equals("Y") || string1.Equals("Yes") || string1.Equals("No"))
             {
                 return 'y';
             } else
             {
                 return 'n';
+            }
+        }
+
+        public static void FindSameInterests(string[] person, string[] name, int[] age, char[] gender, char[] cooking, char[] natural, char[] science, char[] reading)
+        {
+            for (int i = 0; i < cooking.Length; i++)
+            {
+                int numberOfSameInterests = 0;
+                if (person[3] == cooking[i].ToString())
+                {
+                    numberOfSameInterests++;
+                }
+                if (person[4] == science[i].ToString())
+                {
+                    numberOfSameInterests++;
+                }
+                if (person[5] == natural[i].ToString())
+                {
+                    numberOfSameInterests++;
+                }
+                if (person[6] == reading[i].ToString())
+                {
+                    numberOfSameInterests++;
+                }
+                if (numberOfSameInterests >= 3)
+                {
+                    Console.WriteLine("People perfect for you");
+                    Console.WriteLine('\n');
+                    Console.WriteLine(name[i] + ' ' + age[i] + ' ' + gender[i] + ' ' + "\n");
+                }
             }
         }
 
