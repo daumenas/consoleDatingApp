@@ -12,3 +12,17 @@ D:\VU\software testing\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingap
 D:\VU\software testing\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.dll
 D:\VU\software testing\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.pdb
 D:\VU\software testing\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.genruntimeconfig.cache
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\bin\Debug\netcoreapp3.1\datingapp.exe
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\bin\Debug\netcoreapp3.1\datingapp.deps.json
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\bin\Debug\netcoreapp3.1\datingapp.runtimeconfig.json
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\bin\Debug\netcoreapp3.1\datingapp.runtimeconfig.dev.json
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\bin\Debug\netcoreapp3.1\datingapp.dll
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\bin\Debug\netcoreapp3.1\datingapp.pdb
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.csproj.AssemblyReference.cache
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.AssemblyInfoInputs.cache
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.AssemblyInfo.cs
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.csproj.CoreCompileInputs.cache
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.dll
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.pdb
+C:\Users\Dauma\Source\Repos\consoleDatingApp\PROJ\datingapp\datingapp\obj\Debug\netcoreapp3.1\datingapp.genruntimeconfig.cache

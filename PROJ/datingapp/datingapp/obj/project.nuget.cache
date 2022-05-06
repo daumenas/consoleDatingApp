@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "nOc7LJ/qAwqXJpEuEmQhwvFNNj46V44SeWSfh10xvSVy0teKGbREB3gi/aS9topSoszdCRmNqXCq1J4dmCMqSA==",
+  "dgSpecHash": "58mYrLpWxfoaJjP3GJyJxSOtlOQgYN/33U6BaBPf5kAtwZaxvhRQXYN7Rpfl1NBw46daysiLgk5qmQl6fJMHOA==",
   "success": true,
-  "projectFilePath": "D:\\VU\\software testing\\PROJ\\datingapp\\datingapp\\datingapp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Dauma\\Source\\Repos\\consoleDatingApp\\PROJ\\datingapp\\datingapp\\datingapp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dauma\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.24\\microsoft.netcore.app.host.win-x64.3.1.24.nupkg.sha512",
+    "C:\\Users\\Dauma\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\Dauma\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\Dauma\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
