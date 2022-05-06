@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace datingapp
 {
@@ -103,13 +104,6 @@ namespace datingapp
             person[6] = newReading.ToString();
 
             FindSameInterests(person, names, age, gender, cooking, natural, science, reading);
-
-
-
-
-
-
-
             //showing matching results
 
             //shut down console
@@ -135,13 +129,9 @@ namespace datingapp
             else
             {
                 //Iterate your list of invalids and check if input has one
-                foreach (string s in invalidChars)
+                if (!Regex.IsMatch(string1, @"^[\p{L}]+$"))
                 {
-                    if (string1.Contains(s))
-                    {
-                        Console.WriteLine("String contains invalid character: " + s);
-                        return 'n';
-                    }
+                    return 'n';
                 }
 
                 return 'y';
