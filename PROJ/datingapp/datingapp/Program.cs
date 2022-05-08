@@ -54,7 +54,7 @@ namespace datingapp
             while (ValidateInteger(newAge = Console.ReadLine()) != 'y')
             {
                 Console.WriteLine("Age contains illegal characters\n");
-                Console.WriteLine("Please enter yourage\n");
+                Console.WriteLine("Please enter your age\n");
             }
            
             Console.WriteLine("Please specifer your gender. Enter F for female, M for male or O for others\n");
@@ -123,7 +123,7 @@ namespace datingapp
             else if (!(!string1.Equals(string1.ToLower())))
             {
                 //Check for min 1 uppercase
-                Console.WriteLine("Requres at least one uppercase");
+                Console.WriteLine("Requires at least one uppercase");
                 return 'n';
             }
             else
