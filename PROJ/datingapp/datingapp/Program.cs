@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace datingapp
@@ -11,7 +12,7 @@ namespace datingapp
         {
             //for fake data written in txt
             string[] names = new string[20];
-            char[] gender=new char[20];
+            char[] gender = new char[20];
             int[] age = new int[20];
             char[] cooking = new char[20];
             char[] natural = new char[20];
@@ -46,22 +47,43 @@ namespace datingapp
             Console.WriteLine("Please enter your first name\n");
             while (ValidateString(newName = Console.ReadLine()) != 'y')
             {
-                Console.WriteLine("Name contains illegal characters\n");
+                if (newName.Contains(" "))//contains more than one word
+                {
+                    Console.WriteLine("Name more than one word\n");
+                }
+                else
+                {
+                    Console.WriteLine("Name contains illegal characters\n");
+                }
+                
                 Console.WriteLine("Please enter your first name\n");
             }
             //newName = Console.ReadLine();
             Console.WriteLine("Please enter your age\n");
             while (ValidateInteger(newAge = Console.ReadLine()) != 'y')
             {
-                Console.WriteLine("Age contains illegal characters\n");
+                bool isIntString = newAge.All(char.IsDigit);
+                if (isIntString) //contains number
+                {
+                    int intAge = int.Parse(newAge);
+                    if ((intAge >= 0 && intAge <= 19) || (intAge > 29)) //check age 20~29
+                    {
+                        Console.WriteLine("This system is only designed for user age between 20~29.\n");
+                    }
+                    
+                }
+                else
+                {
+                    Console.WriteLine("Age contains illegal characters\n");
+                }
                 Console.WriteLine("Please enter your age\n");
             }
-           
-            Console.WriteLine("Please specifer your gender. Enter F for female, M for male or O for others\n");
+
+            Console.WriteLine("Please specify your gender. Enter F for female, M for male or O for others\n");
             while (ValidateGender(newGender = Console.ReadLine()) != 'y')
             {
                 Console.WriteLine("Gender contains illegal characters\n");
-                Console.WriteLine("Please specifer your gender. Enter F for female, M for male or O for others\n");
+                Console.WriteLine("Please specify your gender. Enter F for female, M for male or O for others\n");
             }
             Console.WriteLine('\n');
             Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
@@ -71,7 +93,7 @@ namespace datingapp
                 Console.WriteLine("Answer contains illegal characters\n");
                 Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
             }
-            
+
             Console.WriteLine('\n');
             Console.WriteLine("Do you like science?\n");
             while (ValidateAnswer(newScience = Console.ReadLine()) != 'y')
@@ -120,12 +142,12 @@ namespace datingapp
                 Console.WriteLine("String too Long");
                 return 'n';
             }
-            else if (!(!string1.Equals(string1.ToLower())))
+            /*else if (!(!string1.Equals(string1.ToLower())))
             {
                 //Check for min 1 uppercase
                 Console.WriteLine("Requires at least one uppercase");
                 return 'n';
-            }
+            }*/
             else
             {
                 //Iterate your list of invalids and check if input has one
@@ -145,7 +167,8 @@ namespace datingapp
             if (canConvert && number1 > 19 && number1 < 30)
             {
                 return 'y';
-            } else
+            }
+            else
             {
                 return 'n';
             }
@@ -168,7 +191,8 @@ namespace datingapp
             if (string1.Equals("n") || string1.Equals("N") || string1.Equals("y") || string1.Equals("Y") || string1.Equals("Yes") || string1.Equals("No"))
             {
                 return 'y';
-            } else
+            }
+            else
             {
                 return 'n';
             }
@@ -176,22 +200,23 @@ namespace datingapp
 
         public static void FindSameInterests(string[] person, string[] name, int[] age, char[] gender, char[] cooking, char[] natural, char[] science, char[] reading)
         {
+            int peopleMatched = 0;
             for (int i = 0; i < cooking.Length; i++)
             {
                 int numberOfSameInterests = 0;
-                if (person[3] == cooking[i].ToString())
+                if (person[3].ToLower() == cooking[i].ToString().ToLower())
                 {
                     numberOfSameInterests++;
                 }
-                if (person[4] == science[i].ToString())
+                if (person[4].ToLower() == science[i].ToString().ToLower())
                 {
                     numberOfSameInterests++;
                 }
-                if (person[5] == natural[i].ToString())
+                if (person[5].ToLower() == natural[i].ToString().ToLower())
                 {
                     numberOfSameInterests++;
                 }
-                if (person[6] == reading[i].ToString())
+                if (person[6].ToLower() == reading[i].ToString().ToLower())
                 {
                     numberOfSameInterests++;
                 }
@@ -200,7 +225,14 @@ namespace datingapp
                     Console.WriteLine("People perfect for you");
                     Console.WriteLine('\n');
                     Console.WriteLine(name[i] + ' ' + age[i] + ' ' + gender[i] + ' ' + "\n");
+                    peopleMatched++;
                 }
+            }
+            //cannot find any people matches for user
+            if (peopleMatched == 0)
+            {
+                Console.WriteLine("Cannot find any people perfect for you");
+                Console.WriteLine('\n');
             }
         }
 
