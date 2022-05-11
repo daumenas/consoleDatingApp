@@ -58,76 +58,117 @@ namespace datingapp
                 
                 Console.WriteLine("Please enter your first name\n");
             }
-            //newName = Console.ReadLine();
-            Console.WriteLine("Please enter your age\n");
-            while (ValidateInteger(newAge = Console.ReadLine()) != 'y')
+
+            if (newName == "admin")
             {
-                bool isIntString = newAge.All(char.IsDigit);
-                if (isIntString) //contains number
+                Console.WriteLine("Welcome to admin mode\n");
+                Console.WriteLine("Please enter the password\n");
+                while (true)
                 {
-                    int intAge = int.Parse(newAge);
-                    if ((intAge >= 0 && intAge <= 19) || (intAge > 29)) //check age 20~29
+                    string adminPassword;
+                    adminPassword = Console.ReadLine();
+                    if(adminPassword == "123") break;
+                    Console.WriteLine("Wrong password, please enter again\n");
+                }
+                Console.WriteLine("Successfully login\n");
+                while (true)
+                {
+                    Console.WriteLine("Choose an action\n");
+                    Console.WriteLine("list - to see all the users in the system\n" +
+                    "fliter - to filter the users you want to see\n" + 
+                    "exit - to exit admin mode");
+                    string action = Console.ReadLine();
+                    if (action == "list" || action == "List")
                     {
-                        Console.WriteLine("This system is only designed for user age between 20~29.\n");
+                        ShowAllUsers(names,age,gender,cooking,science,natural,reading);
+                    }else if(action == "filter" || action == "Filter")
+                    {
+                        Console.WriteLine("Choose the category you want to filter (enter gender for g, cooking for c, natural for n, science for s, reading for r)\n");
+                        string category = Console.ReadLine();
+                        ShowFilter(category, names, age, gender, cooking, science, natural, reading);
+                    }else if(action == "exit" || action == "Exit")
+                    {
+                        Console.Write("Successfully logout\n");
+                        break;
                     }
-                    
+                    else
+                    {
+                        Console.Write("Wrong action\n");
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("Age contains illegal characters\n");
-                }
+                
+            }
+            else
+            {
                 Console.WriteLine("Please enter your age\n");
-            }
+                while (ValidateInteger(newAge = Console.ReadLine()) != 'y')
+                {
+                    bool isIntString = newAge.All(char.IsDigit);
+                    if (isIntString) //contains number
+                    {
+                        int intAge = int.Parse(newAge);
+                        if ((intAge >= 0 && intAge <= 19) || (intAge > 29)) //check age 20~29
+                        {
+                            Console.WriteLine("This system is only designed for user age between 20~29.\n");
+                        }
+                    
+                    }
+                    else
+                    {
+                        Console.WriteLine("Age contains illegal characters\n");
+                    }
+                    Console.WriteLine("Please enter your age\n");
+                }
 
-            Console.WriteLine("Please specify your gender. Enter F for female, M for male or O for others\n");
-            while (ValidateGender(newGender = Console.ReadLine()) != 'y')
-            {
-                Console.WriteLine("Gender contains illegal characters\n");
                 Console.WriteLine("Please specify your gender. Enter F for female, M for male or O for others\n");
-            }
-            Console.WriteLine('\n');
-            Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
-            Console.WriteLine("Do you like cooking?\n");
-            while (ValidateAnswer(newCooking = Console.ReadLine()) != 'y')
-            {
-                Console.WriteLine("Answer contains illegal characters\n");
+                while (ValidateGender(newGender = Console.ReadLine()) != 'y')
+                {
+                    Console.WriteLine("Gender contains illegal characters\n");
+                    Console.WriteLine("Please specify your gender. Enter F for female, M for male or O for others\n");
+                }
+                Console.WriteLine('\n');
                 Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
-            }
+                Console.WriteLine("Do you like cooking?\n");
+                while (ValidateAnswer(newCooking = Console.ReadLine()) != 'y')
+                {
+                    Console.WriteLine("Answer contains illegal characters\n");
+                    Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
+                }
 
-            Console.WriteLine('\n');
-            Console.WriteLine("Do you like science?\n");
-            while (ValidateAnswer(newScience = Console.ReadLine()) != 'y')
-            {
-                Console.WriteLine("Answer contains illegal characters\n");
-                Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
-            }
-            Console.WriteLine('\n');
-            Console.WriteLine("Do you enjoy nature?\n");
-            while (ValidateAnswer(newNatural = Console.ReadLine()) != 'y')
-            {
-                Console.WriteLine("Answer contains illegal characters\n");
-                Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
-            }
-            Console.WriteLine('\n');
-            Console.WriteLine("Do you like reading?\n");
-            while (ValidateAnswer(newReading = Console.ReadLine()) != 'y')
-            {
-                Console.WriteLine("Answer contains illegal characters\n");
-                Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
-            }
-            Console.WriteLine('\n');
-            string[] person = new string[7];
-            person[0] = newName;
-            person[1] = newAge;
-            person[2] = newGender.ToString();
-            person[3] = newCooking.ToString();
-            person[4] = newScience.ToString();
-            person[5] = newNatural.ToString();
-            person[6] = newReading.ToString();
+                Console.WriteLine('\n');
+                Console.WriteLine("Do you like science?\n");
+                while (ValidateAnswer(newScience = Console.ReadLine()) != 'y')
+                {
+                    Console.WriteLine("Answer contains illegal characters\n");
+                    Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
+                }
+                Console.WriteLine('\n');
+                Console.WriteLine("Do you enjoy nature?\n");
+                while (ValidateAnswer(newNatural = Console.ReadLine()) != 'y')
+                {
+                    Console.WriteLine("Answer contains illegal characters\n");
+                    Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
+                }
+                Console.WriteLine('\n');
+                Console.WriteLine("Do you like reading?\n");
+                while (ValidateAnswer(newReading = Console.ReadLine()) != 'y')
+                {
+                    Console.WriteLine("Answer contains illegal characters\n");
+                    Console.WriteLine("Please answer the following questions by entering Y for yes or N for no.\n");
+                }
+                Console.WriteLine('\n');
+                string[] person = new string[7];
+                person[0] = newName;
+                person[1] = newAge;
+                person[2] = newGender.ToString();
+                person[3] = newCooking.ToString();
+                person[4] = newScience.ToString();
+                person[5] = newNatural.ToString();
+                person[6] = newReading.ToString();
 
-            FindSameInterests(person, names, age, gender, cooking, natural, science, reading);
-            //showing matching results
+                FindSameInterests(person, names, age, gender, cooking, natural, science, reading); //showing matching results
 
+            }//end admin else
             //shut down console
             Console.WriteLine("Press any key to stop.\n");
             Console.ReadKey();
@@ -236,5 +277,93 @@ namespace datingapp
             }
         }
 
-    }
+        public static void ShowAllUsers(string[] name, int[] age, char[] gender, char[] cooking, char[] natural, char[] science, char[] reading)
+        {
+            Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
+            for (int i = 0; i < cooking.Length; i++)
+            {
+                if (name[i] == null) break;
+                Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
+            }
+        }
+
+        public static void ShowFilter(string cat, string[] name, int[] age, char[] gender, char[] cooking, char[] natural, char[] science, char[] reading)
+        {
+            if(cat == "gender" || cat == "g" || cat == "Gender" || cat == "G")
+            {
+                Console.WriteLine("Please specify the gender you want to filter. Enter F for female, M for male or O for others\n");
+                string genderOption;
+                while (ValidateGender(genderOption = Console.ReadLine()) != 'y')
+                {
+                    Console.WriteLine("Gender contains illegal characters\n");
+                    Console.WriteLine("Please specify your gender you want to filter. Enter F for female, M for male or O for others\n");
+                }
+                if (genderOption.Equals("f") || genderOption.Equals("F"))
+                {
+                    Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
+                    for (int i = 0; i < cooking.Length; i++)
+                    {
+                        if(gender[i].Equals('f') || gender[i].Equals('F'))
+                        Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
+                    }
+                }else if (genderOption.Equals("m") || genderOption.Equals("M"))
+                {
+                    Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
+                    for (int i = 0; i < cooking.Length; i++)
+                    {
+                        if (gender[i].Equals('m') || gender[i].Equals('M'))
+                            Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
+                    }
+                }else if (genderOption.Equals("o") || genderOption.Equals("O"))
+                {
+                    Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
+                    for (int i = 0; i < cooking.Length; i++)
+                    {
+                        if (gender[i].Equals('o') || gender[i].Equals('O'))
+                            Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
+                    }
+                }
+            }else if(cat == "cooking" || cat == "c" || cat == "Cooking" || cat == "C"){
+                Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
+                for (int i = 0; i < cooking.Length; i++)
+                {
+                    if (cooking[i].Equals('y') || cooking[i].Equals('Y'))
+                        Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
+                }
+            }
+            else if (cat == "natural" || cat == "n" || cat == "Natural" || cat == "N")
+            {
+                Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
+                for (int i = 0; i < cooking.Length; i++)
+                {
+                    if (natural[i].Equals('y') || natural[i].Equals('Y'))
+                        Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
+                }
+
+            }
+            else if (cat == "science" || cat == "s" || cat == "Science" || cat == "S")
+            {
+                Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
+                for (int i = 0; i < cooking.Length; i++)
+                {
+                    if (science[i].Equals('y') || science[i].Equals('Y'))
+                        Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
+                }
+
+            }
+            else if (cat == "reading" || cat == "r" || cat == "Reading" || cat == "R")
+            {
+                Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
+                for (int i = 0; i < cooking.Length; i++)
+                {
+                    if (reading[i].Equals('y') || reading[i].Equals('Y'))
+                        Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Wrong filter category\n");
+            }
+        }
+    }//end Class
 }
