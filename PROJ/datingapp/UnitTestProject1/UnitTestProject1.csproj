@@ -49,6 +49,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckActionFilter.cs" />
+    <Compile Include="CheckActionListTest.cs" />
+    <Compile Include="CheckAdminTests.cs" />
+    <Compile Include="CheckGenderTests.cs" />
     <Compile Include="FindSameInterestsTest.cs" />
     <Compile Include="TestValidateAnswers.cs" />
     <Compile Include="TestIntegerTest.cs" />
