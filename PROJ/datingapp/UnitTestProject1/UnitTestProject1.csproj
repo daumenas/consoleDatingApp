@@ -54,6 +54,8 @@
     <Compile Include="CheckAdminTests.cs" />
     <Compile Include="CheckGenderTests.cs" />
     <Compile Include="FindSameInterestsTest.cs" />
+    <Compile Include="TestExit.cs" />
+    <Compile Include="TestFilter.cs" />
     <Compile Include="TestValidateAnswers.cs" />
     <Compile Include="TestIntegerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
