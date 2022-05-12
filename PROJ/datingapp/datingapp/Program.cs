@@ -11,13 +11,13 @@ namespace datingapp
         static void Main(string[] args)
         {
             //for fake data written in txt
-            string[] names = new string[20];
-            char[] gender = new char[20];
-            int[] age = new int[20];
-            char[] cooking = new char[20];
-            char[] natural = new char[20];
-            char[] science = new char[20];
-            char[] reading = new char[20];
+            string[] names = new string[50];
+            char[] gender = new char[50];
+            int[] age = new int[50];
+            char[] cooking = new char[50];
+            char[] natural = new char[50];
+            char[] science = new char[50];
+            char[] reading = new char[50];
 
             //for new user
             string newName;
@@ -58,45 +58,9 @@ namespace datingapp
                 
                 Console.WriteLine("Please enter your first name\n");
             }
-
-            if (newName == "admin")
+            if (newName == "adminadmin")
             {
-                Console.WriteLine("Welcome to admin mode\n");
-                Console.WriteLine("Please enter the password\n");
-                while (true)
-                {
-                    string adminPassword;
-                    adminPassword = Console.ReadLine();
-                    if(adminPassword == "123") break;
-                    Console.WriteLine("Wrong password, please enter again\n");
-                }
-                Console.WriteLine("Successfully login\n");
-                while (true)
-                {
-                    Console.WriteLine("Choose an action\n");
-                    Console.WriteLine("list - to see all the users in the system\n" +
-                    "fliter - to filter the users you want to see\n" + 
-                    "exit - to exit admin mode");
-                    string action = Console.ReadLine();
-                    if (action == "list" || action == "List")
-                    {
-                        ShowAllUsers(names,age,gender,cooking,science,natural,reading);
-                    }else if(action == "filter" || action == "Filter")
-                    {
-                        Console.WriteLine("Choose the category you want to filter (enter gender for g, cooking for c, natural for n, science for s, reading for r)\n");
-                        string category = Console.ReadLine();
-                        ShowFilter(category, names, age, gender, cooking, science, natural, reading);
-                    }else if(action == "exit" || action == "Exit")
-                    {
-                        Console.Write("Successfully logout\n");
-                        break;
-                    }
-                    else
-                    {
-                        Console.Write("Wrong action\n");
-                    }
-                }
-                
+                AdminMode(names, age, gender, cooking, natural, science, reading);
             }
             else
             {
@@ -289,7 +253,7 @@ namespace datingapp
 
         public static void ShowFilter(string cat, string[] name, int[] age, char[] gender, char[] cooking, char[] natural, char[] science, char[] reading)
         {
-            if(cat == "gender" || cat == "g" || cat == "Gender" || cat == "G")
+            if(CheckFilterOption(cat).Equals("G"))
             {
                 Console.WriteLine("Please specify the gender you want to filter. Enter F for female, M for male or O for others\n");
                 string genderOption;
@@ -298,32 +262,33 @@ namespace datingapp
                     Console.WriteLine("Gender contains illegal characters\n");
                     Console.WriteLine("Please specify your gender you want to filter. Enter F for female, M for male or O for others\n");
                 }
-                if (genderOption.Equals("f") || genderOption.Equals("F"))
+                if (CheckGender(genderOption).Equals("F"))
                 {
                     Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
                     for (int i = 0; i < cooking.Length; i++)
                     {
-                        if(gender[i].Equals('f') || gender[i].Equals('F'))
+                        if(CheckGender(gender[i].ToString()).Equals("F"))
                         Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
                     }
-                }else if (genderOption.Equals("m") || genderOption.Equals("M"))
+                }else if (CheckGender(genderOption).Equals("M"))
                 {
                     Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
                     for (int i = 0; i < cooking.Length; i++)
                     {
-                        if (gender[i].Equals('m') || gender[i].Equals('M'))
+                        if (CheckGender(gender[i].ToString()).Equals("M"))
                             Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
                     }
-                }else if (genderOption.Equals("o") || genderOption.Equals("O"))
+                }else if (CheckGender(genderOption).Equals("O"))
                 {
                     Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
                     for (int i = 0; i < cooking.Length; i++)
                     {
-                        if (gender[i].Equals('o') || gender[i].Equals('O'))
+                        if (CheckGender(gender[i].ToString()).Equals("O"))
                             Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
                     }
                 }
-            }else if(cat == "cooking" || cat == "c" || cat == "Cooking" || cat == "C"){
+            }else if(CheckFilterOption(cat).Equals("C"))
+            {
                 Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
                 for (int i = 0; i < cooking.Length; i++)
                 {
@@ -331,7 +296,7 @@ namespace datingapp
                         Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
                 }
             }
-            else if (cat == "natural" || cat == "n" || cat == "Natural" || cat == "N")
+            else if (CheckFilterOption(cat).Equals("N"))
             {
                 Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
                 for (int i = 0; i < cooking.Length; i++)
@@ -341,7 +306,7 @@ namespace datingapp
                 }
 
             }
-            else if (cat == "science" || cat == "s" || cat == "Science" || cat == "S")
+            else if (CheckFilterOption(cat).Equals("S"))
             {
                 Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
                 for (int i = 0; i < cooking.Length; i++)
@@ -351,7 +316,7 @@ namespace datingapp
                 }
 
             }
-            else if (cat == "reading" || cat == "r" || cat == "Reading" || cat == "R")
+            else if (CheckFilterOption(cat).Equals("R"))
             {
                 Console.WriteLine("Name\tAge\tGender\tCooking\tNatural\tScience\tReading\n");
                 for (int i = 0; i < cooking.Length; i++)
@@ -360,10 +325,100 @@ namespace datingapp
                         Console.WriteLine(name[i] + '\t' + age[i] + '\t' + gender[i] + '\t' + cooking[i] + '\t' + natural[i] + '\t' + science[i] + '\t' + reading[i] + '\t' + "\n");
                 }
             }
-            else
+            else if (CheckFilterOption(cat).Equals("Error"))
             {
                 Console.WriteLine("Wrong filter category\n");
             }
+        }
+
+        public static void AdminMode(string[] names, int[] age, char[] gender, char[] cooking, char[] natural, char[] science, char[] reading)
+        {
+                Console.WriteLine("Welcome to admin mode\n");
+                Console.WriteLine("Please enter the password\n");
+
+                while (true)
+                {
+                    string adminPassword;
+                    adminPassword = Console.ReadLine();
+                    if (CheckAdminPassword(adminPassword)) break; //check admin password func
+                    Console.WriteLine("Wrong password, please enter again\n");
+                }
+                Console.WriteLine("Successfully login\n");
+                while (true)
+                {
+                    Console.WriteLine("Choose an action\n");
+                    Console.WriteLine("list - to see all the users in the system\n" +
+                    "fliter - to filter the users you want to see\n" +
+                    "exit - to exit admin mode");
+                    string action = Console.ReadLine();
+                    if (CheckActionList(action)) //check action list func
+                    {
+                        ShowAllUsers(names, age, gender, cooking, science, natural, reading);
+                    }
+                    else if (CheckActionFilter(action)) //check action filter func
+                    {
+                        Console.WriteLine("Choose the category you want to filter (enter gender for g, cooking for c, natural for n, science for s, reading for r)\n");
+                        string category = Console.ReadLine();
+                        ShowFilter(category, names, age, gender, cooking, science, natural, reading);
+                    }
+                    else if (CheckActionExit(action)) //check action exit func
+                    {
+                        Console.Write("Successfully logout\n");
+                        break;
+                    }
+                    else
+                    {
+                        Console.Write("Wrong action\n");
+                    }
+                }
+
+            
+        }
+
+        public static bool CheckAdminPassword(string adminPassword)
+        {
+            if (adminPassword == "123") return true;
+            else return false;
+
+        }
+
+        public static bool CheckActionList(string action)
+        {
+            if (action == "list" || action == "List") return true;
+            else return false;
+
+        }
+
+        public static bool CheckActionFilter(string action)
+        {
+            if (action == "filter" || action == "Filter") return true;
+            else return false;
+
+        }
+
+        public static bool CheckActionExit(string action)
+        {
+            if (action == "exit" || action == "Exit") return true;
+            else return false;
+
+        }
+
+        public static string CheckGender(string gender)
+        {
+            if (gender.Equals("f") || gender.Equals("F")) return "F";
+            else if (gender.Equals("m") || gender.Equals("M")) return "M";
+            else  return "O";
+
+        }
+
+        public static string CheckFilterOption(string cat)
+        {
+            if (cat == "gender" || cat == "g" || cat == "Gender" || cat == "G") return "G";
+            else if (cat == "cooking" || cat == "c" || cat == "Cooking" || cat == "C") return "C";
+            else if (cat == "natural" || cat == "n" || cat == "Natural" || cat == "N") return "N";
+            else if (cat == "science" || cat == "s" || cat == "Science" || cat == "S") return "S";
+            else if (cat == "reading" || cat == "r" || cat == "Reading" || cat == "R") return "R";
+            else return "Error";
         }
     }//end Class
 }
