@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "58mYrLpWxfoaJjP3GJyJxSOtlOQgYN/33U6BaBPf5kAtwZaxvhRQXYN7Rpfl1NBw46daysiLgk5qmQl6fJMHOA==",
+  "dgSpecHash": "tCeKYQLgpp4FmKBUMEB2/8+T+zi3x0XizgfPA1KXhziPnSfIMUSoxe06FQeHwRfWcx/xKgCMSNUG1ZZbrRgUIQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dauma\\Source\\Repos\\consoleDatingApp\\PROJ\\datingapp\\datingapp\\datingapp.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Dauma\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.24\\microsoft.netcore.app.host.win-x64.3.1.24.nupkg.sha512",
-    "C:\\Users\\Dauma\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\Dauma\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\Dauma\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Dauma\\source\\repos\\consoleDatingApp\\PROJ\\datingapp\\datingapp\\datingapp.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

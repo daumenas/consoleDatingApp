@@ -193,7 +193,7 @@ namespace datingapp
 
         public static char ValidateAnswer(string string1)
         {
-            if (string1.Equals("n") || string1.Equals("N") || string1.Equals("y") || string1.Equals("Y") || string1.Equals("Yes") || string1.Equals("No"))
+            if (string1.Equals("n") || string1.Equals("N") || string1.Equals("y") || string1.Equals("Y") || string1.Equals("Yes") || string1.Equals("No") || string1.Equals("yes") || string1.Equals("no"))
             {
                 return 'y';
             }
