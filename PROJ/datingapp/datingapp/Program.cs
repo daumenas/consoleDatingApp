@@ -67,15 +67,22 @@ namespace datingapp
                 Console.WriteLine("Please enter your age\n");
                 while (ValidateInteger(newAge = Console.ReadLine()) != 'y')
                 {
-                    bool isIntString = newAge.All(char.IsDigit);
-                    if (isIntString) //contains number
+                    if (newAge.Length > 3)
                     {
-                        int intAge = int.Parse(newAge);
-                        if ((intAge >= 0 && intAge <= 19) || (intAge > 29)) //check age 20~29
+                        Console.WriteLine("Age contains illegal characters\n");
+                    }
+                    else if (newAge.Length < 3)
+                    {
+                        bool isIntString = newAge.All(char.IsDigit);
+                        if (isIntString && newAge!="") //contains number
                         {
-                            Console.WriteLine("This system is only designed for user age between 20~29.\n");
+                            int intAge = int.Parse(newAge);
+                            if ((intAge >= 0 && intAge <= 19) || (intAge > 29)) //check age 20~29
+                            {
+                                Console.WriteLine("This system is only designed for user age between 20~29.\n");
+                            }
+
                         }
-                    
                     }
                     else
                     {
